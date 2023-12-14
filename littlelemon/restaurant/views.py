@@ -3,6 +3,7 @@ from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIV
 from .models import Menu, Bookingtable
 from .serializers import MenuSerializer,BookingtableSerializer
 from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
 
 
 
@@ -10,7 +11,8 @@ from rest_framework import viewsets
 def index(request):
  return render(request, 'index.html', {})
 
-class MenuView(ListCreateAPIView):
+class MenuView(ListCreateAPIView,):
+ permission_classes = (IsAuthenticated)
  queryset = Menu.objects.all()
  serializer_class = MenuSerializer
 
