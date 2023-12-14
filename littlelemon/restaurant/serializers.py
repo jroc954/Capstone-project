@@ -12,7 +12,7 @@ class BookingtableSerializer(serializers.ModelSerializer):
     class Meta:
         model = Bookingtable
         fields = '__all__'
-        
+
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
         model = Menu

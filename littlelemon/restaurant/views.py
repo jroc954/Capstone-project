@@ -12,7 +12,7 @@ def index(request):
  return render(request, 'index.html', {})
 
 class MenuView(ListCreateAPIView,):
- permission_classes = (IsAuthenticated)
+ 
  queryset = Menu.objects.all()
  serializer_class = MenuSerializer
 
