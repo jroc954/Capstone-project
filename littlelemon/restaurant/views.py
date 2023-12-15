@@ -12,7 +12,7 @@ def index(request):
  return render(request, 'index.html', {})
 
 class MenuView(ListCreateAPIView,):
- 
+ permission_classes = (IsAuthenticated,)
  queryset = Menu.objects.all()
  serializer_class = MenuSerializer
 
@@ -21,7 +21,7 @@ class SingleMenuView(RetrieveUpdateDestroyAPIView):
  serializer_class = MenuSerializer
 
 class bookingtableview(ListCreateAPIView):
- permission_classes = (IsAuthenticated)
+ permission_classes = (IsAuthenticated,)
  queryset = Bookingtable.objects.all()
  serializer_class = BookingtableSerializer
 
