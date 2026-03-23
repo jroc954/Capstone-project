@@ -24,5 +24,11 @@ class bookingtableview(ListCreateAPIView):
  permission_classes = (IsAuthenticated,)
  queryset = Bookingtable.objects.all()
  serializer_class = BookingtableSerializer
+ 
+class BookingtableViewSet(viewsets.ModelViewSet):
+ queryset = Bookingtable.objects.all()
+ serializer_class = BookingtableSerializer
+ 
+
 
 
